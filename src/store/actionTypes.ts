@@ -1,5 +1,3 @@
-import {Frontend} from '@shelf/types';
-
 // ACTION TYPES
 export enum ActionTypes {
   RESET_APP_NAME = 'RESET_APP_NAME',
@@ -17,6 +15,17 @@ export type ActionsPayload = {
   [ActionTypes.SET_APP_NAME]: string;
 };
 
+export type ActionMap<M extends Record<string, any>> = {
+  [Key in keyof M]: M[Key] extends undefined
+    ? {
+        type: Key;
+      }
+    : {
+        type: Key;
+        payload: M[Key];
+      };
+};
+
 /**
  *  Enum of all possible redux actions defined in ActionTypes and ActionsPayload
  *
@@ -29,7 +38,7 @@ export type ActionsPayload = {
  *      payload: string
  *  }
  */
-export type AppAction = Frontend.Redux.ActionMap<ActionsPayload>[keyof typeof ActionTypes];
+export type AppAction = ActionMap<ActionsPayload>[keyof typeof ActionTypes];
 
 /**
  * Factory for creating redux actions
