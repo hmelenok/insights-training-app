@@ -2,20 +2,10 @@ import './main.scss';
 import * as React from 'react';
 import {ChangeEvent, FC, useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {b, createBlock} from '@shelf/bem';
-import dynamic from 'next/dynamic';
-import {ColoredIconProps} from '@shelf/icons/lib/icons/src/ColoredIcon';
 import {AppState} from '../src/store/types';
 import AwesomeSearchInput from '../src/components/AwesomeSearchInput/AwesomeSearchInput';
 import {ActionTypes, createAction} from '../src/store/actionTypes';
 
-const block = createBlock('Page');
-const ColoredIcon = dynamic<ColoredIconProps>(
-  () => import('@shelf/icons').then(mod => mod.ColoredIcon),
-  {
-    ssr: false
-  }
-);
 const stateSelector = ({appName}: AppState) => appName;
 
 const AwesomePage: FC = () => {
@@ -32,15 +22,15 @@ const AwesomePage: FC = () => {
   ]);
 
   return (
-    <div className={b(block)}>
-      <header className={b(block, 'header')}>
+    <div className={'Page'}>
+      <header className={'Page__header'}>
         <h1>
           Let`s create new <a href={'https://nextjs.org/'}>nextjs</a> {appName}{' '}
-          <ColoredIcon icon={'favourite'} color={'#61dafb'} onClick={handleCrossClick} />
+          <span onClick={handleCrossClick}>x</span>
         </h1>
       </header>
 
-      <main className={b(block, 'main')}>
+      <main className={'Page__main'}>
         <AwesomeSearchInput text={appName} onChange={handleSearchChange} />
       </main>
     </div>
