@@ -1,0 +1,14 @@
+{
+  "root": true,
+  "extends": [
+    "@shelf/eslint-config/frontend-typescript"
+  ],
+  "settings": {
+    "react": {
+      "version": "16.8.6"
+    }
+  },
+  "globals": {
+    "toastr": true
+  }
+}

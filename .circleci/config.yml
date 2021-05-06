@@ -1,0 +1,197 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@1.1.6
+  aws-cli: circleci/aws-cli@1.3.0
+
+executors:
+  node12:
+    docker:
+      - image: cimg/node:12.20
+    working_directory: ~/repo
+    environment:
+      TOOL_NODE_FLAGS: '--max-old-space-size=3200'
+      NEXT_TELEMETRY_DISABLED: 1
+      REACT_APP_DATADOG_CLIENT_TOKEN: 'xxx'
+      REACT_APP_DATADOG_RUM_CLIENT_TOKEN: 'yyy'
+      REACT_APP_DATADOG_RUM_APPLICATION_ID: 'zzz'
+      REACT_APP_DATADOG_RUM_SITE: 'datadoghq.com'
+
+commands:
+  install_deps:
+    steps:
+      - node/with-cache:
+          cache-version: v1-all
+          cache-key: yarn.lock
+          dir: ~/repo/node_modules
+          use-strict-cache: true
+          steps:
+            - run: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> .npmrc
+            - run: yarn install --pure-lockfile --no-progress
+
+  with_env_vars_from_ssm:
+    parameters:
+      env_var:
+        type: string
+      ssm_param:
+        type: string
+    steps:
+      - run:
+          name: fetch from ssm
+          command: |
+            echo "export << parameters.env_var >>=$(npx @shelf/aws-ssm-get-param-cli /$ENVIRONMENT<< parameters.ssm_param >>)" >> /tmp/ssm
+
+  build_app:
+    steps:
+      - checkout
+      - install_deps
+
+      - run: yarn coverage --runInBand
+      - run: yarn lint:ci
+      - run: yarn lint:styles
+      - run: yarn type-check
+
+      - with_env_vars_from_ssm:
+          env_var: REACT_APP_SHELF_DOMAIN
+          ssm_param: /shelf_domain
+
+      - run:
+          name: build
+          command: |
+            source /tmp/ssm
+            yarn build
+            yarn export
+
+      - run:
+          name: cleanup source maps
+          command: |
+            find ./out -type f -name '*.map' -delete
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - out/*
+
+  deploy_app:
+    steps:
+      - with_env_vars_from_ssm:
+          env_var: AWS_S3_BUCKET_NAME
+          ssm_param: /s3_buckets/XXXXX_CHANGE_ME_PLEASE_XXXXX
+
+      - aws-cli/setup
+
+      - attach_workspace:
+          at: ~/repo
+
+      - run:
+          name: deploy to s3
+          command: |
+            source /tmp/ssm
+            cd out
+
+            aws s3 sync . "s3://$AWS_S3_BUCKET_NAME" \
+                --acl public-read \
+                --include="*.html" \
+                --delete \
+                --cache-control="no-cache"
+
+            aws s3 sync . "s3://$AWS_S3_BUCKET_NAME" \
+                --acl public-read \
+                --exclude="*.html" \
+                --delete \
+                --cache-control="public, max-age=31536000, immutable"
+
+jobs:
+  build:
+    executor: node12
+    steps:
+      - build_app
+
+  deploy:
+    executor: aws-cli/default
+    working_directory: ~/repo
+    steps:
+      - deploy_app
+
+workflows:
+  version: 2
+
+  build_deploy:
+    jobs:
+      - build:
+          name: build_staging_us
+          context: staging-us
+          filters:
+            branches:
+              only:
+                - /feature.*/
+                - /renovate.*/
+                - develop
+
+      - deploy:
+          name: deploy_staging_us
+          context: staging-us
+          requires:
+            - build_staging_us
+          filters:
+            branches:
+              only:
+                - develop
+
+      - build:
+          name: build_prod_us
+          context: prod-us
+          filters:
+            branches:
+              only:
+                - master
+                - /release.*/
+
+      - deploy:
+          name: deploy_prod_us
+          context: prod-us
+          requires:
+            - build_prod_us
+          filters:
+            branches:
+              only:
+                - master
+
+      - build:
+          name: build_staging_eu
+          context: staging-eu
+          filters:
+            branches:
+              only:
+                - /feature.*/
+                - /renovate.*/
+                - develop
+
+      - deploy:
+          name: deploy_staging_eu
+          context: staging-eu
+          requires:
+            - build_staging_eu
+          filters:
+            branches:
+              only:
+                - develop
+
+      - build:
+          name: build_prod_eu
+          context: prod-eu
+          filters:
+            branches:
+              only:
+                - master
+                - /release.*/
+
+      - deploy:
+          name: deploy_prod_eu
+          context: prod-eu
+          requires:
+            - build_prod_eu
+          filters:
+            branches:
+              only:
+                - master

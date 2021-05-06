@@ -1,0 +1,6 @@
+.circleci
+.next
+build/
+node_modules/
+out/
+static/
