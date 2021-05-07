@@ -1,6 +1,7 @@
 const ENVIRONMENT = process.env.ENVIRONMENT || 'dev';
 const SHELF_DOMAIN = process.env.SHELF_DOMAIN || 'gsstaging.net';
 const API_HOST = process.env.API_HOST || `api.${SHELF_DOMAIN}`;
+const GRAPHQL_API_KEY = 'da2-f4mgxcrf7ffppbhmqom6mmstgq';
 
 const STATIC_URL = `https://static.${SHELF_DOMAIN}`;
 
@@ -11,5 +12,6 @@ module.exports = {
   ENVIRONMENT, // dev | staging | prod
   API_HOST, // api.gsstaging.net | api.shelf.io - based on your SHELF_DOMAIM
   STATIC_URL, // for static resources
-  DATADOG_CLIENT_TOKEN, // token to setup logs
+  DATADOG_CLIENT_TOKEN, // token to setup logs,
+  GRAPHQL_API_KEY,
 };
