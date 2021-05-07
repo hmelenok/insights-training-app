@@ -1,9 +1,3 @@
 {
-  "presets": [
-    "next/babel"
-  ],
-  "plugins": [
-    "babel-plugin-dynamic-import-webpack",
-    "@babel/plugin-proposal-optional-chaining"
-  ]
+  "extends": "@shelf/babel-config/frontend-next"
 }
