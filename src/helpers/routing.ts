@@ -4,10 +4,16 @@ const LOGIN_PAGE_URL = `https://login.${process.env.SHELF_DOMAIN}`;
 export const setToken = (token: string) => localStorage.setItem(TOKEN_KEY, token);
 export const getToken = () => localStorage.getItem(TOKEN_KEY);
 
+export const validateAuth = () => {
+  if (!getToken()) {
+    redirectToAuthWithReturn();
+  }
+};
+
 export const redirectToAuthWithReturn = () => {
   const successRedirectURL = `${window.location.origin}/login/`;
 
-  window.location.href = LOGIN_PAGE_URL + successRedirectURL;
+  window.location.href = `${LOGIN_PAGE_URL}?successRedirectURL=${successRedirectURL}`;
 };
 
 export const logout = () => {

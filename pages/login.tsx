@@ -1,12 +1,23 @@
 import * as React from 'react';
 import {useEffect} from 'react';
 import {useRouter} from 'next/router';
+import {getToken, redirectToAuthWithReturn, setToken} from '../src/helpers/routing';
 
-export default function LoginPage() {
+function LoginPage() {
+  const router = useRouter();
+
   useEffect(() => {
-    const {query} = useRouter();
+    const {shelf_auth_token} = router.query;
 
-    console.log(query);
+    const authToken = (shelf_auth_token as string) || getToken();
+
+    if (authToken) {
+      setToken(authToken);
+
+      router.push('/');
+    } else {
+      redirectToAuthWithReturn();
+    }
   }, []);
 
   return (
@@ -16,9 +27,10 @@ export default function LoginPage() {
         backgroundImage: `url('${process.env.STATIC_URL}/images/backgrounds/login-page-image.jpg')`,
         height: '100vh',
         backgroundSize: 'cover',
-        backgroundPosition: 'left center'
+        backgroundPosition: 'left center',
       }}
     />
   );
 }
 LoginPage.displayName = 'LoginPage';
+export default LoginPage;

@@ -1,16 +1,21 @@
 import './main.scss';
 import * as React from 'react';
-import {ChangeEvent, FC, useCallback} from 'react';
+import {ChangeEvent, FC, useCallback, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {AppState} from '../src/store/types';
 import AwesomeSearchInput from '../src/components/AwesomeSearchInput/AwesomeSearchInput';
 import {ActionTypes, createAction} from '../src/store/actionTypes';
+import {validateAuth} from '../src/helpers/routing';
 
 const stateSelector = ({appName}: AppState) => appName;
 
 const AwesomePage: FC = () => {
   const appName = useSelector(stateSelector);
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    validateAuth();
+  }, []);
 
   const handleSearchChange = useCallback(
     (event: ChangeEvent<HTMLInputElement>) =>
