@@ -26,7 +26,7 @@ export const withRedux = (
     <Provider key="mock-store" store={store}>
       {ui}
     </Provider>,
-    store
+    store,
   ];
 };
 
@@ -45,7 +45,7 @@ export const renderWithRedux = (
     // adding `store` to the returned utilities to allow us
     // to reference it in our tests (just try to avoid using
     // this to test implementation details).
-    store
+    store,
   };
 };
 

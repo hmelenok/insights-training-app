@@ -18,7 +18,7 @@ const AwesomePage: FC = () => {
     [dispatch]
   );
   const handleCrossClick = useCallback(() => dispatch(createAction(ActionTypes.RESET_APP_NAME)), [
-    dispatch
+    dispatch,
   ]);
 
   return (

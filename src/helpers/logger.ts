@@ -4,7 +4,7 @@ export const initLogger = () => {
   datadogLogs.init({
     clientToken: process.env.DATADOG_CLIENT_TOKEN as string,
     forwardErrorsToLogs: true,
-    silentMultipleInit: true
+    silentMultipleInit: true,
   });
   datadogLogs.addLoggerGlobalContext('env', process.env.ENVIRONMENT);
   datadogLogs.addLoggerGlobalContext('service', 'xxx');

@@ -1,7 +1,7 @@
 // ACTION TYPES
 export enum ActionTypes {
   RESET_APP_NAME = 'RESET_APP_NAME',
-  SET_APP_NAME = 'SET_APP_NAME'
+  SET_APP_NAME = 'SET_APP_NAME',
 }
 
 /**

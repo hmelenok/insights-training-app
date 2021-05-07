@@ -46,7 +46,7 @@ class Api {
   static headers() {
     const headers: any = {
       Accept: 'application/json',
-      'Content-Type': 'application/json'
+      'Content-Type': 'application/json',
     };
 
     if (Api.AUTH_TOKEN) {
@@ -158,7 +158,7 @@ class Api {
       method,
       mode: 'cors' as RequestMode,
       headers: {...Api.headers(), ...headers},
-      ...rest
+      ...rest,
     };
 
     if (body) {
@@ -184,7 +184,7 @@ class Api {
     if (resp.ok) {
       debug('%s %s ... %o', method, pathname, {
         request: params || queryString,
-        response
+        response,
       });
 
       const error = get(response, 'error', false);

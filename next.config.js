@@ -6,6 +6,6 @@ module.exports = withSass({
   env: environment,
   trailingSlash: true,
   typescript: {
-    ignoreDevErrors: true
-  }
+    ignoreDevErrors: true,
+  },
 });

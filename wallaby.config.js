@@ -3,8 +3,8 @@ module.exports = () => {
     autoDetect: true,
     env: {
       params: {
-        env: 'TZ=UTC'
-      }
-    }
+        env: 'TZ=UTC',
+      },
+    },
   };
 };

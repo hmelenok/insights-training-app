@@ -15,7 +15,7 @@ i18next.init({
     datadogLogs.logger.warn(message, {key});
 
     return env !== 'prod' ? `⛔️ ${key}` : '';
-  }
+  },
 });
 
 i18next.use(initReactI18next);

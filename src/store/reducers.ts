@@ -7,13 +7,13 @@ export const rootReducer = (state = initialState, action: AppAction): AppState =
     case ActionTypes.RESET_APP_NAME:
       return {
         ...state,
-        appName: initialState.appName
+        appName: initialState.appName,
       };
 
     case ActionTypes.SET_APP_NAME:
       return {
         ...state,
-        appName: action.payload
+        appName: action.payload,
       };
 
     default:

@@ -2,7 +2,7 @@ import * as React from 'react';
 import {fireEvent, render} from '@testing-library/react';
 import AwesomeSearchInput from './AwesomeSearchInput';
 
-describe('AwesomeSearchInput', () => {
+describe('awesomeSearchInput', () => {
   it('should display input with placeholder', () => {
     const r = render(<AwesomeSearchInput text={''} />);
 
