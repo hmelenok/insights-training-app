@@ -4,7 +4,7 @@ const environment = require('./environment.config');
 
 module.exports = withSass({
   env: environment,
-  trailingSlash: !process.env.CI,
+  trailingSlash: true,
   typescript: {
     ignoreDevErrors: true,
   },
