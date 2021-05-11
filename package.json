@@ -13,7 +13,7 @@
     "build": "next build",
     "coverage": "yarn test --coverage",
     "dev": "next",
-    "export": "next export",
+    "export": "next export && touch out/.nojekyll",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx,.json --fix",
     "lint:ci": "eslint . --ext .js,.jsx,.ts,.tsx,.json --quiet",
     "lint:styles": "stylelint '**/*.{scss,css,less,sass}' --fix",
