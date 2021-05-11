@@ -34,4 +34,4 @@ jobs:
         with:
           branch: staging # The branch the action should deploy to.
           folder: out # The folder the action should deploy.
-          clean: true
+          target-folder: docs
