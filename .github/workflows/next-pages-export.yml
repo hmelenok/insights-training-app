@@ -28,6 +28,7 @@ jobs:
         run: npm run build && npm run export
         env:
           BASE_PATH: /insights-training-app
+          GRAPHQL_API_KEY: da2-f4mgxcrf7ffppbhmqom6mmstgq
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.2
