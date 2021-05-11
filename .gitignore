@@ -20,3 +20,4 @@ yarn-error.log*
 .idea/$CACHE_FILE$
 .idea/$PRODUCT_WORKSPACE_FILE$
 .idea/.gitignore
+.env.local
