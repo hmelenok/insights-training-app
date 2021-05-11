@@ -1,14 +1,18 @@
 import * as React from 'react';
 import {useEffect} from 'react';
 import {useRouter} from 'next/router';
-import {getToken, redirectToAuthWithReturn, setToken} from '../src/helpers/routing';
+import {
+  getToken,
+  populateSafeQueryParams,
+  redirectToAuthWithReturn,
+  setToken,
+} from '../src/helpers/routing';
 
 function LoginPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const {shelf_auth_token} = router.query;
-
+    const {shelf_auth_token} = populateSafeQueryParams(router).query;
     const authToken = (shelf_auth_token as string) || getToken();
 
     if (authToken) {

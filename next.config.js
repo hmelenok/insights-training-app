@@ -8,6 +8,6 @@ module.exports = withSass({
   typescript: {
     ignoreDevErrors: true,
   },
-  basePath: process.env.BASE_PATH || '',
-  assetPrefix: process.env.BASE_PATH ? `${process.env.BASE_PATH}/` : '',
+  basePath: environment.BASE_PATH || '',
+  assetPrefix: environment.BASE_PATH ? `${environment.BASE_PATH}/` : '',
 });
