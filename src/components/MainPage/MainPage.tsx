@@ -16,6 +16,9 @@ const MainPage: FC = () => {
   const dispatch = useDispatch();
   const {data: {user} = {}, isValidating} = useSWR('get-user', fetchUser, {
     onError: validateUnauthorizedError,
+    onSuccess: () => {
+      // TODO: propagate user to redux store if needed to be reused in other places
+    },
   });
 
   useEffect(() => {
