@@ -6,9 +6,6 @@ import Head from 'next/head';
 import {wrapper} from '../src/store';
 import i18next from '../src/i18next';
 import {initLogger} from '../src/helpers/logger';
-import {initAPI} from '../src/helpers/api';
-
-initAPI();
 
 class MyApp extends App {
   componentDidMount() {

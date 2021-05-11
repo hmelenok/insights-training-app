@@ -1,6 +1,11 @@
 import {LOGIN_PAGE_URL, TOKEN_KEY} from './constants';
+import client from './GraphQLClient';
 
-export const setToken = (token: string) => localStorage.setItem(TOKEN_KEY, token);
+export const setToken = (token: string) => {
+  client.setHeader('authorization', token);
+  localStorage.setItem(TOKEN_KEY, token);
+};
+
 export const getToken = () => localStorage.getItem(TOKEN_KEY);
 
 /**

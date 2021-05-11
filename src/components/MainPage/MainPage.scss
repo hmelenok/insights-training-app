@@ -11,22 +11,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+    color: #61dafb;
   }
 
   h1 {
-    color: #61dafb;
     padding-top: 50px;
     padding-bottom: 50px;
     margin: 0;
-  }
-
-  .ColoredIcon {
-    cursor: pointer;
-    display: inline-block;
-    animation-name: heartbeats;
-    animation-iteration-count: infinite;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
   }
 }
 
