@@ -8,4 +8,5 @@ module.exports = withSass({
   typescript: {
     ignoreDevErrors: true,
   },
+  basePath: process.env.BASE_PATH || '/',
 });

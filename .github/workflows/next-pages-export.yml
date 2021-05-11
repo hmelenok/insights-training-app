@@ -18,10 +18,16 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      # Code Quality
       - run: npm run lint:ci
       - run: npm run lint:styles
       - run: npm test
-      - run: npm run build && npm run export
+
+      # App build and deployment
+      - name: Next.js build & static export
+        run: npm run build && npm run export
+        env:
+          BASE_PATH: /insights-training-app
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.2
