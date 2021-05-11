@@ -30,7 +30,7 @@ export const validateUnauthorizedError = err => {
 };
 
 export const redirectToAuthWithReturn = () => {
-  const successRedirectURL = `${window.location.origin}/login/`;
+  const successRedirectURL = `${window.location.origin}${process.env.BASE_PATH || ''}/login/`;
 
   window.location.href = `${LOGIN_PAGE_URL}?successRedirectURL=${successRedirectURL}`;
 };
