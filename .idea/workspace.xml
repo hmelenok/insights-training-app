@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="84680d34-7d5e-45fc-83df-36a0d30c235f" name="Default Changelist" comment="ci: remove docs" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="2c8e887c-b8bf-42a0-981c-6460dcfab4c9" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1sAYtDSgnAIZG13tgbgRainvozq" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TF_FMT" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.test">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="lint:styles" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="lint:styles" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="test" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="type-check" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="type-check" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.test" />
+        <item itemvalue="npm.lint:styles" />
+        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.type-check" />
+        <item itemvalue="npm.lint" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="84680d34-7d5e-45fc-83df-36a0d30c235f" name="Default Changelist" comment="" />
+      <created>1620317074159</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1620317074159</updated>
+      <workItem from="1620317076337" duration="8093000" />
+      <workItem from="1620403915571" duration="699000" />
+      <workItem from="1620739273692" duration="8327000" />
+    </task>
+    <task id="LOCAL-00001" summary="chore: cleanup from private libs">
+      <created>1620319513150</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1620319513150</updated>
+    </task>
+    <task id="LOCAL-00002" summary="chore: cleanup shelf colors to regular ones">
+      <created>1620319699403</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1620319699403</updated>
+    </task>
+    <task id="LOCAL-00003" summary="types: fix redux types">
+      <created>1620319859133</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1620319859133</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat: add class api copy">
+      <created>1620319908437</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1620319908437</updated>
+    </task>
+    <task id="LOCAL-00005" summary="chore: idea files">
+      <created>1620319923338</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1620319923338</updated>
+    </task>
+    <task id="LOCAL-00006" summary="chore: remove circle deployement">
+      <created>1620319943263</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1620319943263</updated>
+    </task>
+    <task id="LOCAL-00007" summary="chore: remove shelf i18n">
+      <created>1620319978814</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1620319978814</updated>
+    </task>
+    <task id="LOCAL-00008" summary="chore: remove icons">
+      <created>1620320038317</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1620320038317</updated>
+    </task>
+    <task id="LOCAL-00009" summary="chore: remove sass colors">
+      <created>1620320053084</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1620320053084</updated>
+    </task>
+    <task id="LOCAL-00010" summary="chore: add debug lib">
+      <created>1620320097527</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1620320097527</updated>
+    </task>
+    <task id="LOCAL-00011" summary="chore: add idea for commits">
+      <created>1620320116159</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1620320116159</updated>
+    </task>
+    <task id="LOCAL-00012" summary="chore: fix non null assertion">
+      <created>1620741366535</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1620741366535</updated>
+    </task>
+    <task id="LOCAL-00013" summary="chore: add check for LS">
+      <created>1620741593329</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1620741593329</updated>
+    </task>
+    <task id="LOCAL-00014" summary="ci: check deployment with branch">
+      <created>1620742452338</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1620742452338</updated>
+    </task>
+    <task id="LOCAL-00015" summary="ci: add correct basePath">
+      <created>1620742980016</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1620742980016</updated>
+    </task>
+    <task id="LOCAL-00016" summary="ci: try to fix assetPrefix">
+      <created>1620744230814</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1620744230814</updated>
+    </task>
+    <task id="LOCAL-00017" summary="ci: deploy actions without trailing slash and to root">
+      <created>1620745433802</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1620745433802</updated>
+    </task>
+    <task id="LOCAL-00018" summary="ci: remove docs">
+      <created>1620745608314</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1620745608314</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
+    <servers>
+      <JIRA shared="true" url="https://gemshelf.atlassian.net">
+        <option name="inCloud" value="true" />
+      </JIRA>
+    </servers>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="chore: cleanup from private libs" />
+    <MESSAGE value="chore: cleanup shelf colors to regular ones" />
+    <MESSAGE value="types: fix redux types" />
+    <MESSAGE value="feat: add class api copy" />
+    <MESSAGE value="chore: idea files" />
+    <MESSAGE value="chore: remove circle deployement" />
+    <MESSAGE value="chore: remove shelf i18n" />
+    <MESSAGE value="chore: remove icons" />
+    <MESSAGE value="chore: remove sass colors" />
+    <MESSAGE value="chore: add debug lib" />
+    <MESSAGE value="chore: add idea for commits" />
+    <MESSAGE value="chore: fix non null assertion" />
+    <MESSAGE value="chore: add check for LS" />
+    <MESSAGE value="ci: check deployment with branch" />
+    <MESSAGE value="ci: add correct basePath" />
+    <MESSAGE value="ci: try to fix assetPrefix" />
+    <MESSAGE value="ci: deploy actions without trailing slash and to root" />
+    <MESSAGE value="ci: remove docs" />
+    <option name="LAST_COMMIT_MESSAGE" value="ci: remove docs" />
+  </component>
+</project>
