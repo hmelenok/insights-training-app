@@ -3,7 +3,7 @@ import * as React from 'react';
 import {ChangeEvent, FC, useCallback, useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import useSWR from 'swr';
-import {validateAuth} from '../../helpers/routing';
+import {validateAuth, validateUnauthorizedError} from '../../helpers/routing';
 import {ActionTypes, createAction} from '../../store/actionTypes';
 import {fetchUser} from '../../helpers/api';
 import AwesomeSearchInput from '../AwesomeSearchInput/AwesomeSearchInput';
@@ -14,7 +14,9 @@ const stateSelector = ({appName}: AppState) => appName;
 const MainPage: FC = () => {
   const appName = useSelector(stateSelector);
   const dispatch = useDispatch();
-  const {data: {user} = {}, isValidating} = useSWR('get-user', fetchUser);
+  const {data: {user} = {}, isValidating} = useSWR('get-user', fetchUser, {
+    onError: validateUnauthorizedError,
+  });
 
   useEffect(() => {
     validateAuth();

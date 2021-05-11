@@ -1,3 +1,4 @@
+import {get} from 'lodash';
 import {LOGIN_PAGE_URL, TOKEN_KEY} from './constants';
 import client from './GraphQLClient';
 
@@ -15,6 +16,14 @@ export const getToken = () => localStorage.getItem(TOKEN_KEY);
 export const validateAuth = () => {
   if (!getToken()) {
     redirectToAuthWithReturn();
+  }
+};
+
+export const validateUnauthorizedError = err => {
+  const error = get(err, 'response.errors.0.errorType');
+
+  if (error === 'Unauthorized') {
+    return redirectToAuthWithReturn();
   }
 };
 
