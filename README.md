@@ -1,4 +1,5 @@
 # Shelf Awesome Insights
+[Deployed version](https://shelfio.github.io/insights-training-app/)
 
 ### Libraries and Tools
 
@@ -11,7 +12,9 @@
 
 1. Install dependencies via yarn
 
-`yarn`
+```shell
+yarn
+```
 
 2. Run dev server
 
