@@ -9,7 +9,9 @@
 
 ### Development
 
-1. Create an `.env.local` file and set `GRAPHQL_API_KEY` env variable
+1. Install dependencies via yarn
+
+`yarn`
 
 2. Run dev server
 
